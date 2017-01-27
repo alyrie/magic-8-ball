@@ -1,0 +1,30 @@
+// Magic 8 Ball Object
+var magic8Ball = {};
+
+//List of possible answers
+magic8Ball.answers = ["Yes indeed", "Maybe so", "It is decidedly so", "You betcha", "You might want to rethink that", "Definitely not", "Keep dreaming", "Of course"];
+
+magic8Ball.askQuestion = function (question) {
+  
+//Pick a random number
+var randomNum = Math.random();
+  
+//Pick a random number between 0 and the total list of possible answers
+var pickOne = randomNum * this.answers.length;
+
+//Round the number down so we won't get an undefined variable from the array
+var roundedNum = Math.floor(pickOne);
+  
+//Get the answer by extracting the randomly chosen indexed number from the array
+var finalAnswer = this.answers[roundedNum];
+
+console.log(question);
+console.log(finalAnswer);
+  
+};
+
+//Call this bad boy
+magic8Ball.askQuestion("Will I be rich someday?");
+
+
+
